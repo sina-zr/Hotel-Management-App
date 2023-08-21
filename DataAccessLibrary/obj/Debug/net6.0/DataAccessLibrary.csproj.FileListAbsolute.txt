@@ -1,0 +1,5 @@
+D:\Docs\Projects\Console Apps\HotelManagementApp\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.csproj.AssemblyReference.cache
+D:\Docs\Projects\Console Apps\HotelManagementApp\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Docs\Projects\Console Apps\HotelManagementApp\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.AssemblyInfoInputs.cache
+D:\Docs\Projects\Console Apps\HotelManagementApp\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.AssemblyInfo.cs
+D:\Docs\Projects\Console Apps\HotelManagementApp\DataAccessLibrary\obj\Debug\net6.0\DataAccessLibrary.csproj.CoreCompileInputs.cache
