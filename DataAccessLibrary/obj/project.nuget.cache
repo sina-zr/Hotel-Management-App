@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DJI14ucLAAYmPL/gCw2Ktb0NlGI3JqEoeMyuu7kRn0o2ZGJ5C+yI3wdgdVXZpkkzKcUMOy1dsXJt6/ls8vBihw==",
+  "dgSpecHash": "Q0KLG+yFMAtIH1xAa5PTpfDD0GhZB6sLAheAHfP23yvZLxDHhG0ZH/PnGHHEomgqP7VosVpXDdsxXjZpCC0zCA==",
   "success": true,
   "projectFilePath": "D:\\Docs\\Projects\\Console Apps\\HotelManagementApp\\DataAccessLibrary\\DataAccessLibrary.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,8 @@
     "C:\\Users\\sinaz\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.0\\microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512",
+    "C:\\Users\\sinaz\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\sinaz\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\microsoft.identity.client\\4.47.2\\microsoft.identity.client.4.47.2.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\2.19.3\\microsoft.identity.client.extensions.msal.2.19.3.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.24.0\\microsoft.identitymodel.abstractions.6.24.0.nupkg.sha512",

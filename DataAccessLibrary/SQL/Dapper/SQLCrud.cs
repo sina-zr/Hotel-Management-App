@@ -10,7 +10,7 @@ namespace DataAccessLibrary.SQL.Dapper
     public class SQLCrud
     {
         private readonly string _connectionString;
-        private SQLDataAccess db = new SQLDataAccess();
+        private DataAccessLibrary.DataBase.ISqlDataAccess db;
         public SQLCrud(string connectionString)
         {
             _connectionString = connectionString;
