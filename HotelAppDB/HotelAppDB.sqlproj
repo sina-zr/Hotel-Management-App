@@ -74,6 +74,6 @@
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Publish Profiles\HotelAppDB.publishToSina.xml" />
+    <None Include="Publish Profiles\HotelAppDBpublishToSina.publish.xml" />
   </ItemGroup>
 </Project>
