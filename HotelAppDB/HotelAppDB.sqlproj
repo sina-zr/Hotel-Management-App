@@ -60,13 +60,17 @@
     <Folder Include="db\Tables" />
     <Folder Include="Scripts" />
     <Folder Include="Publish Profiles" />
+    <Folder Include="db\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="db\Tables\RoomTypes.sql" />
     <Build Include="db\Tables\Rooms.sql" />
     <Build Include="db\Tables\Guests.sql" />
     <Build Include="db\Tables\Bookings.sql" />
-    <Build Include="db\spRoomTypes_GetAvailableRoomTypes.sql" />
+    <Build Include="db\Stored Procedures\spGuest_Insert.sql" />
+    <Build Include="db\Stored Procedures\spRoomTypes_GetAvailableRoomTypes.sql" />
+    <Build Include="db\Stored Procedures\spRooms_GetAvailableRooms.sql" />
+    <Build Include="db\Stored Procedures\spBookings_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="HotelAppDB.refactorlog" />
