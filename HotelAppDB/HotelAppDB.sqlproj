@@ -66,6 +66,7 @@
     <Build Include="db\Tables\Rooms.sql" />
     <Build Include="db\Tables\Guests.sql" />
     <Build Include="db\Tables\Bookings.sql" />
+    <Build Include="db\spRoomTypes_GetAvailableRoomTypes.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="HotelAppDB.refactorlog" />

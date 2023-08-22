@@ -1,6 +1,6 @@
 ﻿namespace DataAccessLibrary.DataBase
 {
-    internal interface ISqlDataAccess
+    public interface ISqlDataAccess
     {
         List<T> LoadData<T, U>(string sqlStatement,
                                U parameters,
