@@ -5,6 +5,6 @@ BEGIN
 	set nocount on;
 
 	update dbo.Bookings
-	set checkedIn = 1
+	set CheckedIn = 1
 	where Id = @Id;
 END

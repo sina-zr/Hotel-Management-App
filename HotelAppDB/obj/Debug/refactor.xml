@@ -14,4 +14,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="GuestId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="bbf1d17a-28fc-4189-8456-3729bb05da19" ChangeDateTime="08/23/2023 06:03:14" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Bookings].[checkedIn]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Bookings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CheckedIn" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f2fb8bb8-6d1b-4cbf-b5b7-13fd515ea2e2" ChangeDateTime="08/23/2023 06:05:03" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Bookings].[CheckedIn]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Bookings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="checkedIn" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6c0959b2-87e4-476c-a8c8-13d6f3f8ba2f" ChangeDateTime="08/23/2023 06:06:40" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Bookings].[checkedIn]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Bookings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CheckedIn" />
+  </Operation>
 </Operations>

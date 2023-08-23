@@ -55,7 +55,7 @@
 			</Relationship>
 			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[dbo].[Bookings].[checkedIn]" />
+					<References Name="[dbo].[Bookings].[CheckedIn]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
@@ -222,7 +222,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Bookings].[checkedIn]">
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Bookings].[CheckedIn]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -548,6 +548,549 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spBookings_CheckIn]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	set nocount on;
+
+	update dbo.Bookings
+	set CheckedIn = 1
+	where Id = @Id;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Bookings]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[CheckedIn]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spBookings_CheckIn].[@Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spBookings_CheckIn].[@Id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="149" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spBookings_CheckIn]&#xD;&#xA;&#x9;@Id int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spBookings_Insert]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+
+BEGIN
+	set nocount on;
+
+	insert into dbo.Bookings (RoomId, GuestId, StartDate, EndDate, TotalCost)
+	values (@roomId, @guestID, @startDate, @endDate, @totalCost);
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Bookings]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[GuestId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[StartDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[EndDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[TotalCost]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spBookings_Insert].[@roomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spBookings_Insert].[@guestID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spBookings_Insert].[@startDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spBookings_Insert].[@endDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spBookings_Insert].[@totalCost]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spBookings_Insert].[@roomId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spBookings_Insert].[@guestID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spBookings_Insert].[@startDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spBookings_Insert].[@endDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spBookings_Insert].[@totalCost]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[money]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="308" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spBookings_Insert]&#xD;&#xA;&#x9;@roomId int,&#xD;&#xA;&#x9;@guestID int,&#xD;&#xA;&#x9;@startDate date,&#xD;&#xA;&#x9;@endDate date,&#xD;&#xA;&#x9;@totalCost money&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spBookings_Search]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	set nocount on;
+
+	select [b].[Id], [b].[RoomId], [b].[GuestId], [b].[StartDate], [b].[EndDate], [b].[checkedIn], [b].[TotalCost],
+		g.FirstName, g.LastName,
+		r.RoomNumber, r.RoomTypeId,
+		[rt].[Title], [rt].[Description], [rt].[Price]
+	from dbo.Bookings b
+	inner join dbo.Guests g on g.Id = b.GuestId
+	inner join dbo.Rooms r on r.Id = b.RoomId
+	inner join dbo.RoomTypes rt on rt.Id = r.RoomTypeId
+	where b.StartDate = @startDate AND g.LastName = @lastName;
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Bookings]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Guests]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Guests].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[GuestId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Rooms]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Rooms].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RoomTypes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RoomTypes].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Rooms].[RoomTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[GuestId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[StartDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[EndDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[CheckedIn]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[TotalCost]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Guests].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Guests].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Rooms].[RoomNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RoomTypes].[Title]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RoomTypes].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RoomTypes].[Price]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spBookings_Search].[@startDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spBookings_Search].[@lastName]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spBookings_Search].[@lastName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spBookings_Search].[@startDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="574" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spBookings_Search]&#xD;&#xA;&#x9;@lastName nvarchar(50),&#xD;&#xA;&#x9;@startDate date&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spGuest_Insert]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	set nocount on;
+
+	if not exists (select 1 from dbo.Guests where FirstName = @firstName and LastName = @lastName)
+	begin
+		insert into dbo.Guests (FirstName, LastName)
+		values (@firstName, @lastName)
+	end
+
+	select top 1 [Id], [FirstName], [LastName], [EmailAddress]
+	from dbo.Guests
+	where FirstName = @firstName and LastName = @lastName;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Guests]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Guests].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spGuest_Insert].[@firstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Guests].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spGuest_Insert].[@lastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Guests].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Guests].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Guests].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Guests].[EmailAddress]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spGuest_Insert].[@firstName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spGuest_Insert].[@lastName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="458" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spGuest_Insert]&#xD;&#xA;&#x9;@firstName nvarchar(50),&#xD;&#xA;&#x9;@lastName nvarchar(50)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRooms_GetAvailableRooms]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+
+BEGIN
+	set nocount on;
+
+	select r.*
+	from dbo.Rooms r
+	inner join dbo.RoomTypes t on t.Id = r.RoomTypeId
+	WHERE r.RoomTypeId = @roomTypeId
+		AND r.Id NOT in (
+		SELECT b.RoomId
+		FROM dbo.Bookings b
+		WHERE (@startDate < b.StartDate AND @endDate > b.EndDate)
+			 OR (b.StartDate < @endDate AND @endDate < b.EndDate)
+			 OR (b.StartDate <= @startDate AND @startDate < b.EndDate));
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Rooms]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RoomTypes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RoomTypes].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Rooms].[RoomTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRooms_GetAvailableRooms].[@roomTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Rooms].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRooms_GetAvailableRooms].[@startDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[StartDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRooms_GetAvailableRooms].[@endDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bookings].[EndDate]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRooms_GetAvailableRooms].[@startDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRooms_GetAvailableRooms].[@endDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRooms_GetAvailableRooms].[@roomTypeId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="508" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRooms_GetAvailableRooms]&#xD;&#xA;&#x9;@startDate date,&#xD;&#xA;&#x9;@endDate date,&#xD;&#xA;&#x9;@roomTypeId int&#xD;&#xA;AS" />
+			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[spRoomTypes_GetAvailableRoomTypes]">
 			<Property Name="BodyScript">

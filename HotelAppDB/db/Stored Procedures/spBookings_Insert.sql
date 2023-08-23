@@ -9,7 +9,7 @@ AS
 BEGIN
 	set nocount on;
 
-	insert into dbo.Bookings (RoomId, GuestId, EndDate, TotalCost)
+	insert into dbo.Bookings (RoomId, GuestId, StartDate, EndDate, TotalCost)
 	values (@roomId, @guestID, @startDate, @endDate, @totalCost);
 
 END

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLibrary.Data
 {
-    public class SqlData
+    public class SqlData : IDataBaseData
     {
         private readonly ISqlDataAccess _db;
         private const string connectionStringName = "SqlDb";
@@ -42,7 +42,7 @@ namespace DataAccessLibrary.Data
                 new { Id = roomTypeId }, connectionStringName, false).First();
 
             TimeSpan timeStaying = endDate.Subtract(startDate);
-            
+
 
             // Getting the available rooms
             var LoadRoomsParameters = new { startDate, endDate, roomTypeId };
@@ -52,10 +52,13 @@ namespace DataAccessLibrary.Data
                                                                               true);
 
             //Saving the Booking
-            var SaveBookingParameters = new { roomId = availableRooms.First().Id,
+            var SaveBookingParameters = new
+            {
+                roomId = availableRooms.First().Id,
                 startDate = startDate,
                 endDate = endDate,
-                totalCost = timeStaying.Days * roomType.Price };
+                totalCost = timeStaying.Days * roomType.Price
+            };
 
             _db.SaveData("dbo.spBookings_Insert", SaveBookingParameters, connectionStringName, true);
         }
