@@ -59,5 +59,16 @@ namespace DataAccessLibrary.Data
 
             _db.SaveData("dbo.spBookings_Insert", SaveBookingParameters, connectionStringName, true);
         }
+
+        public List<FullBookingModel> SerachBookings(string lastName)
+        {
+
+            var bookings = _db.LoadData<FullBookingModel, dynamic>("dbo.spBookings_Search",
+                                                                   new { lastName, startDate = DateTime.Now.Date },
+                                                                   connectionStringName,
+                                                                   true);
+
+            return bookings;
+        }
     }
 }
