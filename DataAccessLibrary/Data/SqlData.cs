@@ -70,5 +70,11 @@ namespace DataAccessLibrary.Data
 
             return bookings;
         }
+
+        public void CheckInGuest(int bookingId)
+        {
+            _db.SaveData("dbo.spBookings_CheckIn", new { Id = bookingId }, connectionStringName, true);
+
+        }
     }
 }
