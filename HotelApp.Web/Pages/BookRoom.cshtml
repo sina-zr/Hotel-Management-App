@@ -1,0 +1,33 @@
+﻿@page
+@model HotelApp.Web.Pages.BookRoomModel
+@{
+}
+
+<h1>Booking A Room</h1>
+<h3>@Model.RoomType.Title</h3>
+<p>@Model.RoomType.Description</p>
+
+<form method="get">
+    <div class="form-group">
+        <label asp-for="@Model.StartDate"></label>
+        <label asp-for="@Model.StartDate">@Model.StartDate.ToString("d")</label>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.EndDate"></label>
+        <label asp-for="@Model.EndDate">@Model.EndDate.ToString("d")</label>
+    </div>
+
+    <br />
+</form>
+
+<form method="post">
+        <div class="form-group">
+        <label asp-for="@Model.FirstName">FirstName</label>
+        <input type="text" asp-for="@Model.FirstName" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.LastName">FirstName</label>
+        <input type="text" asp-for="@Model.LastName" />
+    </div>
+    <button type="submit" class="btn btn-primary">Book</button>
+</form>

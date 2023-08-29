@@ -1200,5 +1200,56 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRoomTypes_GetAvailableRoomTypes]&#xD;&#xA;&#x9;@startDate date,&#xD;&#xA;&#x9;@endDate date&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spRoomTypes_GetById]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	set nocount on;
+
+	Select * from dbo.RoomTypes where Id = @id;
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[RoomTypes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[RoomTypes].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spRoomTypes_GetById].[@id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spRoomTypes_GetById].[@id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="138" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spRoomTypes_GetById]&#xD;&#xA;&#x9;@id int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 	</Model>
 </DataSchemaModel>

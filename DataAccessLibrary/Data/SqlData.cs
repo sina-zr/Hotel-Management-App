@@ -55,6 +55,7 @@ namespace DataAccessLibrary.Data
             var SaveBookingParameters = new
             {
                 roomId = availableRooms.First().Id,
+                GuestId = guest.Id,
                 startDate = startDate,
                 endDate = endDate,
                 totalCost = timeStaying.Days * roomType.Price
@@ -78,6 +79,14 @@ namespace DataAccessLibrary.Data
         {
             _db.SaveData("dbo.spBookings_CheckIn", new { Id = bookingId }, connectionStringName, true);
 
+        }
+
+        public RoomTypeModel GetRoomTypeById(int id)
+        {
+            return _db.LoadData<RoomTypeModel, dynamic>("dbo.spRoomTypes_GetById",
+                 new { id },
+                 connectionStringName,
+                 true).First();
         }
     }
 }

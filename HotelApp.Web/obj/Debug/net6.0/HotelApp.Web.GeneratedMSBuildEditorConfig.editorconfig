@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Docs\Projects\Console Apps\HotelManagementApp\HotelApp.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Docs/Projects/Console Apps/HotelManagementApp/HotelApp.Web/Pages/BookRoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va1Jvb20uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Docs/Projects/Console Apps/HotelManagementApp/HotelApp.Web/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

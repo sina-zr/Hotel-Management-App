@@ -73,6 +73,7 @@
     <Build Include="db\Stored Procedures\spBookings_Insert.sql" />
     <Build Include="db\Stored Procedures\spBookings_Search.sql" />
     <Build Include="db\Stored Procedures\spBookings_CheckIn.sql" />
+    <Build Include="db\Stored Procedures\spRoomTypes_GetById.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="HotelAppDB.refactorlog" />
