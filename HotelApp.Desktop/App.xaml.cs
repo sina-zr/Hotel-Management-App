@@ -31,9 +31,7 @@ namespace HotelApp.Desktop
             var services = new ServiceCollection();
             services.AddTransient<MainWindow>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
-            services.AddSingleton<IDataBaseData, SqlData>();
             services.AddTransient<ISQLiteDataAccess, SQLiteDataAccess>();
-
 
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -43,6 +41,21 @@ namespace HotelApp.Desktop
 
             // putting config into Dependency Injection
             services.AddSingleton(config);
+
+            string dbChoice = config.GetValue<string>("DatabaseChoice").ToLower();
+            if (dbChoice == "sql")
+            {
+                services.AddSingleton<IDataBaseData, SqlData>();
+            }
+            else if (dbChoice == "sqlite")
+            {
+                services.AddSingleton<IDataBaseData, SQLiteData>();
+            }
+            else
+            {
+                // Fallback / Default value
+                services.AddSingleton<IDataBaseData, SqlData>();
+            }
 
             // Talking to our serviceProvider
             serviceProvider = services.BuildServiceProvider();
