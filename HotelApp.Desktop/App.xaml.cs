@@ -18,6 +18,8 @@ namespace HotelApp.Desktop
     /// </summary>
     public partial class App : Application
     {
+        public static ServiceProvider serviceProvider;
+
         // Overriding the OnStartup method from Application.cs
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -41,7 +43,7 @@ namespace HotelApp.Desktop
             services.AddSingleton(config);
 
             // Talking to our serviceProvider
-            var serviceProvider = services.BuildServiceProvider();
+            serviceProvider = services.BuildServiceProvider();
             var mainWindow = serviceProvider.GetService<MainWindow>();
 
             mainWindow.Show();

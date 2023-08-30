@@ -750,7 +750,7 @@ BEGIN
 	select [b].[Id], [b].[RoomId], [b].[GuestId], [b].[StartDate], [b].[EndDate], [b].[checkedIn], [b].[TotalCost],
 		g.FirstName, g.LastName,
 		r.RoomNumber, r.RoomTypeId,
-		[rt].[Title], [rt].[Description], [rt].[Price]
+		[rt].[Title], [rt].[Description]
 	from dbo.Bookings b
 	inner join dbo.Guests g on g.Id = b.GuestId
 	inner join dbo.Rooms r on r.Id = b.RoomId
@@ -828,9 +828,6 @@ END]]></Value>
 					<References Name="[dbo].[RoomTypes].[Description]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[RoomTypes].[Price]" />
-				</Entry>
-				<Entry>
 					<References Name="[dbo].[spBookings_Search].[@startDate]" />
 				</Entry>
 				<Entry>
@@ -876,7 +873,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="574" />
+				<Property Name="Length" Value="560" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spBookings_Search]&#xD;&#xA;&#x9;@lastName nvarchar(50),&#xD;&#xA;&#x9;@startDate date&#xD;&#xA;AS" />

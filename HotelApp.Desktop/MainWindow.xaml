@@ -5,8 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelApp.Desktop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Hotel Booking Search" Height="600" Width="800" FontSize="16">
+    <Grid Background="#F0F0F0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="1" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" Margin="0,20,0,0">Hotel Booking Search</Label>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="0,20,0,10">
+            <TextBlock Text="Last Name:" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Padding="5,0,0,0"/>
+            <TextBox x:Name="LastNameBox" Margin="10 0 0 0" MinWidth="256" FontSize="16" VerticalAlignment="Center"/>
+            <Button x:Name="SearchButton" Content="Search" FontSize="18" Margin="5" Padding="15 0" Click="SearchButton_Click" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <ListBox x:Name="BookingsListBox" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding}" MinHeight="200" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="0,20,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <!-- Reservation Information -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Reservation:" FontWeight="SemiBold"/>
+                            <TextBlock Text="{Binding FullNameView}" Margin="5,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Room:" FontWeight="SemiBold"/>
+                            <TextBlock Text="{Binding Title}" Margin="5,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="RoomNumber:" FontWeight="SemiBold"/>
+                            <TextBlock Text="{Binding RoomNumber}" Margin="5,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="TotalCost:" FontWeight="SemiBold"/>
+                            <TextBlock Text="{Binding TotalCost, StringFormat='c'}" Margin="5,0"/>
+                        </StackPanel>
+
+                        <!-- Check-In Section -->
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <TextBlock Text="Checked In:" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                            <CheckBox IsChecked="{Binding CheckedIn}" VerticalAlignment="Center" Margin="5,0" IsEnabled="False"/>
+                            <Button Content="CheckIn" Margin="10,0,0,0" VerticalAlignment="Center" Padding="5"
+                                    CommandParameter="{Binding Id}" Click="CheckInButton_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
     </Grid>
 </Window>

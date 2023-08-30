@@ -14,6 +14,7 @@
         public string Title { get; set; }
         public string Description { get; set; }
         public bool? CheckedIn { get; set; }
-        public decimal? TotalPrice { get; set; }
+        public decimal?TotalCost { get; set; }
+        public string FullNameView => $"{FirstName} {LastName}";
     }
 }

@@ -8,7 +8,7 @@ BEGIN
 	select [b].[Id], [b].[RoomId], [b].[GuestId], [b].[StartDate], [b].[EndDate], [b].[checkedIn], [b].[TotalCost],
 		g.FirstName, g.LastName,
 		r.RoomNumber, r.RoomTypeId,
-		[rt].[Title], [rt].[Description], [rt].[Price]
+		[rt].[Title], [rt].[Description]
 	from dbo.Bookings b
 	inner join dbo.Guests g on g.Id = b.GuestId
 	inner join dbo.Rooms r on r.Id = b.RoomId
