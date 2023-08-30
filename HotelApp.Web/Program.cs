@@ -8,6 +8,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddTransient<IDataBaseData, SqlData>();
 builder.Services.AddTransient<ISqlDataAccess, SqlDataAccess>();
 
+builder.Services.AddTransient<ISQLiteDataAccess, SQLiteDataAccess>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

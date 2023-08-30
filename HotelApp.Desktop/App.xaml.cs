@@ -32,7 +32,9 @@ namespace HotelApp.Desktop
             services.AddTransient<MainWindow>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddSingleton<IDataBaseData, SqlData>();
-            
+            services.AddTransient<ISQLiteDataAccess, SQLiteDataAccess>();
+
+
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json");
