@@ -62,3 +62,8 @@ D:\Docs\Projects\Console Apps\HotelManagementApp\HotelApp.Desktop\obj\Debug\net6
 D:\Docs\Projects\Console Apps\HotelManagementApp\HotelApp.Desktop\obj\Debug\net6.0-windows\HotelApp.Desktop.genruntimeconfig.cache
 D:\Docs\Projects\Console Apps\HotelManagementApp\HotelApp.Desktop\obj\Debug\net6.0-windows\ref\HotelApp.Desktop.dll
 D:\Docs\Projects\Console Apps\HotelManagementApp\HotelApp.Desktop\bin\Debug\net6.0-windows\appsettings.json
+D:\Docs\Projects\Console Apps\HotelManagementApp\HotelApp.Desktop\bin\Debug\net6.0-windows\System.Data.SQLite.dll
+D:\Docs\Projects\Console Apps\HotelManagementApp\HotelApp.Desktop\bin\Debug\net6.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+D:\Docs\Projects\Console Apps\HotelManagementApp\HotelApp.Desktop\bin\Debug\net6.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+D:\Docs\Projects\Console Apps\HotelManagementApp\HotelApp.Desktop\bin\Debug\net6.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+D:\Docs\Projects\Console Apps\HotelManagementApp\HotelApp.Desktop\bin\Debug\net6.0-windows\runtimes\win-x86\native\SQLite.Interop.dll

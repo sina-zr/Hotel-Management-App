@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nuWrW8rmlFunNXHxyRUurEaQKcxP1UMeB4syYyDdlZUkHb9SmETWAj2t0agvVj4I66u8xbsxPkKzY085byzo5A==",
+  "dgSpecHash": "tgUW0nUMzJe3G2+trOfZ3gxoReDyYWJZwzd2IckVmmYZSFjVTlfiKrdQ4y6MQoiWYhHVXvWbaGDlw/vP8RlGQw==",
   "success": true,
   "projectFilePath": "D:\\Docs\\Projects\\Console Apps\\HotelManagementApp\\HotelApp.Desktop\\HotelApp.Desktop.csproj",
   "expectedPackageFiles": [
@@ -34,7 +34,9 @@
     "C:\\Users\\sinaz\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\sinaz\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.118\\stub.system.data.sqlite.core.netstandard.1.0.118.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
+    "C:\\Users\\sinaz\\.nuget\\packages\\system.data.sqlite.core\\1.0.118\\system.data.sqlite.core.1.0.118.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",
