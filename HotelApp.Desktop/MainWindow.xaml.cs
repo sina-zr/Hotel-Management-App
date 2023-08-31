@@ -31,6 +31,7 @@ namespace HotelApp.Desktop
         public MainWindow(IDataBaseData db)
         {
             InitializeComponent();
+            LastNameBox.Focus();
             _db = db;
         }
 
@@ -38,6 +39,7 @@ namespace HotelApp.Desktop
         {
             var bookings = _db.SerachBookings(LastNameBox.Text);
             BookingsListBox.ItemsSource = bookings;
+            LastNameBox.Focus();
         }
 
         private void CheckInButton_Click(object sender, RoutedEventArgs e)
@@ -48,6 +50,7 @@ namespace HotelApp.Desktop
                 var bookings = _db.SerachBookings(LastNameBox.Text);
                 BookingsListBox.ItemsSource = bookings;
             }
+            LastNameBox.Focus();
         }
     }
 }

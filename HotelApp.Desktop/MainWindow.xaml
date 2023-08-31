@@ -23,8 +23,8 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="0,20,0,10">
             <TextBlock Text="Last Name:" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Padding="5,0,0,0"/>
-            <TextBox x:Name="LastNameBox" Margin="10 0 0 0" MinWidth="256" FontSize="16" VerticalAlignment="Center"/>
-            <Button x:Name="SearchButton" Content="Search" FontSize="18" Margin="5" Padding="15 0" Click="SearchButton_Click" VerticalAlignment="Center"/>
+            <TextBox x:Name="LastNameBox" Margin="10 0 0 0" MinWidth="256" FontSize="16" VerticalAlignment="Center" TabIndex="0"/>
+            <Button x:Name="SearchButton" Content="Search" FontSize="18" Margin="5" Padding="15 0" Click="SearchButton_Click" VerticalAlignment="Center" TabIndex="1"/>
         </StackPanel>
 
         <ListBox x:Name="BookingsListBox" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding}" MinHeight="200" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="0,20,0,0">

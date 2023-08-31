@@ -124,13 +124,14 @@ namespace DataAccessLibrary.Data
 			var bookings = _db.LoadData<FullBookingModel, dynamic>(query,
 																   new { lastName , startDate = DateTime.Now.Date.ToString("yyyy-MM-dd") },
 																   connectionStringName);
+			bookings.ForEach(x => x.TotalCost = x.TotalCost / 100);
 
 			return bookings;
 		}
 
 		public void CheckInGuest(int bookingId)
 		{
-			_db.SaveData("dbo.spBookings_CheckIn", new { Id = bookingId }, connectionStringName);
+			_db.SaveData("update Bookings set CheckedIn = 1 where Id = @Id;", new { Id = bookingId }, connectionStringName);
 
 		}
 
