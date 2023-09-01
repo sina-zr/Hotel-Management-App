@@ -11,7 +11,7 @@ BEGIN
 	WHERE r.Id NOT in (
 		SELECT b.RoomId
 		FROM dbo.Bookings b
-		WHERE (@startDate < b.StartDate AND @endDate > b.EndDate)
+		WHERE (@startDate < b.StartDate AND @endDate >= b.EndDate)
 			 OR (b.StartDate < @endDate AND @endDate < b.EndDate)
 			 OR (b.StartDate <= @startDate AND @startDate < b.EndDate))
 		group by t.Id, t.Title, t.Description, t.Price
