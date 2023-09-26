@@ -28,6 +28,9 @@ namespace DataAccessLibrary.DataBase
                 commandType = CommandType.StoredProcedure;
             }
 
+            // Modify the connection string to trust the server certificate
+            connectionString += ";TrustServerCertificate=True";
+
             using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 List<T> rows = connection.Query<T>(sqlStatement, parameters, commandType: commandType).ToList();
@@ -49,6 +52,9 @@ namespace DataAccessLibrary.DataBase
             {
                 commandType = CommandType.StoredProcedure;
             }
+
+            // Modify the connection string to trust the server certificate
+            connectionString += ";TrustServerCertificate=True";
 
             using (IDbConnection connection = new SqlConnection(connectionString))
             {

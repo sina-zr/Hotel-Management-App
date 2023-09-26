@@ -2710,11 +2710,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Docs\\Projects\\Console Apps\\HotelManagementApp\\HotelApp.Desktop\\HotelApp.Desktop.csproj",
+      "projectUniqueName": "D:\\Docs\\Projects\\HotelManagementApp\\HotelApp.Desktop\\HotelApp.Desktop.csproj",
       "projectName": "HotelApp.Desktop",
-      "projectPath": "D:\\Docs\\Projects\\Console Apps\\HotelManagementApp\\HotelApp.Desktop\\HotelApp.Desktop.csproj",
+      "projectPath": "D:\\Docs\\Projects\\HotelManagementApp\\HotelApp.Desktop\\HotelApp.Desktop.csproj",
       "packagesPath": "C:\\Users\\sinaz\\.nuget\\packages\\",
-      "outputPath": "D:\\Docs\\Projects\\Console Apps\\HotelManagementApp\\HotelApp.Desktop\\obj\\",
+      "outputPath": "D:\\Docs\\Projects\\HotelManagementApp\\HotelApp.Desktop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Visual Studio 2022\\Shared Components\\NuGetPackages"
@@ -2736,8 +2736,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\Docs\\Projects\\Console Apps\\HotelManagementApp\\DataAccessLibrary\\DataAccessLibrary.csproj": {
-              "projectPath": "D:\\Docs\\Projects\\Console Apps\\HotelManagementApp\\DataAccessLibrary\\DataAccessLibrary.csproj"
+            "D:\\Docs\\Projects\\HotelManagementApp\\DataAccessLibrary\\DataAccessLibrary.csproj": {
+              "projectPath": "D:\\Docs\\Projects\\HotelManagementApp\\DataAccessLibrary\\DataAccessLibrary.csproj"
             }
           }
         }

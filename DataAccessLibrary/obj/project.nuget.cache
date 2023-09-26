@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J38IHtQPCj9NkCbVrpwJx+9nVz1k2hRCWAXtZtT3Cg8VLFG83tf1EOs9MGNZiHaZmErvZtIqsrrfpxSgAZVBOA==",
+  "dgSpecHash": "uAkfJSPkyckTOoFC2NMGYLRx6m+nWba5XPryXUAZekDgZhOhye5R33NspazqeXzYu1FD398WOgs2WZTnWu4R5g==",
   "success": true,
-  "projectFilePath": "D:\\Docs\\Projects\\Console Apps\\HotelManagementApp\\DataAccessLibrary\\DataAccessLibrary.csproj",
+  "projectFilePath": "D:\\Docs\\Projects\\HotelManagementApp\\DataAccessLibrary\\DataAccessLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sinaz\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ACUiI8uJUP4/GGLTQLUiMYYo4rZsz+IpLXrgO2YUXGX+yU1Pm90nPk/8DkyBY00J5AsYO5hBLKk20MHeGWANYQ==",
+  "dgSpecHash": "FMzLlFDVf29aTQUP1Beh6VSjeyoQHifL99AxGi11bNLUR5fjFEaG7U2dAy/frIe0P6Rg9Hy7YKglaInLhs/HWw==",
   "success": true,
-  "projectFilePath": "D:\\Docs\\Projects\\Console Apps\\HotelManagementApp\\HotelApp.Web\\HotelApp.Web.csproj",
+  "projectFilePath": "D:\\Docs\\Projects\\HotelManagementApp\\HotelApp.Web\\HotelApp.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sinaz\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\sinaz\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
