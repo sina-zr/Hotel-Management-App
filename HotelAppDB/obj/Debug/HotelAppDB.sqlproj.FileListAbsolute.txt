@@ -1,6 +1,0 @@
-D:\Docs\Projects\Console Apps\HotelManagementApp\HotelAppDB\bin\Debug\HotelAppDB.dacpac
-D:\Docs\Projects\Console Apps\HotelManagementApp\HotelAppDB\bin\Debug\HotelAppDB.dll
-D:\Docs\Projects\Console Apps\HotelManagementApp\HotelAppDB\bin\Debug\HotelAppDB.pdb
-D:\Docs\Projects\Console Apps\HotelManagementApp\HotelAppDB\obj\Debug\HotelAppDB.sqlproj.AssemblyReference.cache
-D:\Docs\Projects\Console Apps\HotelManagementApp\HotelAppDB\obj\Debug\HotelAppDB.dll
-D:\Docs\Projects\Console Apps\HotelManagementApp\HotelAppDB\obj\Debug\HotelAppDB.pdb

@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -6,3 +6,9 @@
 /HotelAppDB
 /Sample Queries
 /.vs
+*.log # any file with .log extention
+**/logs/ # any directory any level that has the name logs  in it
+**/Debug/
+**/Release/
+**/bin/
+**/obj/
