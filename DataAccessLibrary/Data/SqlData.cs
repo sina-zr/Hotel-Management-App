@@ -11,7 +11,7 @@ namespace DataAccessLibrary.Data
     public class SqlData : IDataBaseData
     {
         private readonly ISqlDataAccess _db;
-        private const string connectionStringName = "SomeeSQL";
+        private const string connectionStringName = "SqlDb";
 
         public SqlData(ISqlDataAccess db)
         {

@@ -1,7 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
 }
 
 <h1>Booking A Room</h1>
@@ -21,18 +18,55 @@
     <br />
 </form>
 
-<form method="post">
+<form method="post" onsubmit="return validateForm()">
     <div class="form-group">
         <label>FirstName</label>
-        <input type="text" name="firstName" />
+        <input type="text" name="firstName" id="firstName" />
+        <span id="firstNameError" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label>LastName</label>
-        <input type="text" name="lastName" />
+        <input type="text" name="lastName" id="lastName" />
+        <span id="lastNameError" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary"
-        asp-route-firstName="firstName"
-        asp-route-lastName="lastName"
-        asp-route-roomTypeId="@Model.RoomType.Id"
-        asp-action="Book">Book</button>
+            asp-route-firstName="firstName"
+            asp-route-lastName="lastName"
+            asp-route-roomTypeId="@Model.RoomType.Id"
+            asp-action="Book">
+        Book
+    </button>
 </form>
+
+<script>
+    function validateForm() {
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var firstNameError = document.getElementById('firstNameError');
+        var lastNameError = document.getElementById('lastNameError');
+
+        var nameRegex = /^[A-Za-z]+$/; // Regular expression for alphabetic characters
+
+        if (!firstName) {
+            firstNameError.textContent = 'First name cannot be empty.';
+            return false;
+        } else if (!nameRegex.test(firstName)) {
+            firstNameError.textContent = 'First name can only contain alphabetic letters.';
+            return false;
+        } else {
+            firstNameError.textContent = '';
+        }
+
+        if (!lastName) {
+            lastNameError.textContent = 'Last name cannot be empty.';
+            return false;
+        } else if (!nameRegex.test(lastName)) {
+            lastNameError.textContent = 'Last name can only contain alphabetic letters.';
+            return false;
+        } else {
+            lastNameError.textContent = '';
+        }
+
+        return true;
+    }
+</script>
