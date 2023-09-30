@@ -1,7 +1,27 @@
+using DataAccessLibrary.Data;
+using DataAccessLibrary.DataBase;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+builder.Services.AddTransient<ISQLiteDataAccess, SQLiteDataAccess>();
+
+string dbChoice = builder.Configuration.GetValue<string>("DatabaseChoice").ToLower();
+if (dbChoice == "sql")
+{
+    builder.Services.AddSingleton<IDataBaseData, SqlData>();
+}
+else if (dbChoice == "sqlite")
+{
+    builder.Services.AddSingleton<IDataBaseData, SQLiteData>();
+}
+else
+{
+    // Fallback / Default value
+    builder.Services.AddSingleton<IDataBaseData, SqlData>();
+}
 
 var app = builder.Build();
 

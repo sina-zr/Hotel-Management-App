@@ -1,0 +1,56 @@
+﻿
+@{
+}
+
+<h1 style="color:lightcoral;">Room Search</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label>StartDate</label>
+        <input type="date" name="startDate" value="@ViewBag.StartDate"/>
+    </div>
+    <div class="form-group">
+        <label>EndDate</label>
+        <input type="date" name="endDate" value="@ViewBag.EndDate" />
+    </div>
+
+    <button type="submit" class="btn btn-primary"
+        
+        asp-controller="RoomSearch" asp-action="Search">Search</button>
+</form>
+
+<form>
+    @if (ViewBag.AvailableRoomTypes?.Count > 0)
+    {
+        <br />
+        <h2 style="color:mediumslateblue;">Results</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Room Type</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var room in ViewBag.AvailableRoomTypes)
+                {
+                    <tr>
+                        <td>
+                            <strong>@room.Title</strong>
+                            @room.Description
+                        </td>
+                        <td>@String.Format("{0:C}", room.Price)</td>
+                        <td>
+                            <a asp-controller="BookRoom" asp-action="Index"
+                               asp-route-RoomTypeId="@room.Id"
+                               asp-route-startDate="@ViewBag.StartDate"
+                               asp-route-endDate="@ViewBag.EndDate">Book Now</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</form>

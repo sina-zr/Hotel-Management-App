@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Booking A Room</h1>
+<h3>@Model.RoomType.Title</h3>
+<p>@Model.RoomType.Description</p>
+
+<form method="get">
+    <div class="form-group">
+        <label>StartDate:</label>
+        <label>@Model.StartDate.ToString("d")</label>
+    </div>
+    <div class="form-group">
+        <label>EndDate</label>
+        <label>@Model.EndDate.ToString("d")</label>
+    </div>
+
+    <br />
+</form>
+
+<form method="post">
+    <div class="form-group">
+        <label>FirstName</label>
+        <input type="text" name="firstName" />
+    </div>
+    <div class="form-group">
+        <label>LastName</label>
+        <input type="text" name="lastName" />
+    </div>
+    <button type="submit" class="btn btn-primary"
+        asp-route-firstName="firstName"
+        asp-route-lastName="lastName"
+        asp-route-roomTypeId="@Model.RoomType.Id"
+        asp-action="Book">Book</button>
+</form>
